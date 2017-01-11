@@ -10,51 +10,60 @@
 </head>
 <body <?php body_class(); ?> >
 
-<?php /*if(ale_get_option('sitelogo')){
-    echo "<img src='".ale_get_option('sitelogo')."' />";
-}*/ ?>
-<?php ale_option('sitelogo'); ?>
 
-<section class="slider-example">
-	<div class="newhomeslider wrapper">
-		<ul class="slides">
-			<?php $slider = ale_sliders_get_slider('test-slider');  ?>
-			<?php if($slider):?>
-				<?php foreach ($slider['slides'] as $slide) : ?>
-					<li>
-						<figure>
-							<img src="<?php echo $slide['image']; ?>" alt="<?php echo $slide['title']; ?>" />
-							<figcaption>
-								<div class="sliderdata">
-									<?php if($slide['title']){ ?>
-										<div class="titleslide headerfont">
-											<?php if($slide['url']){
-												echo "<a href='".$slide['url']."'>";
-											} ?>
 
-											<?php echo $slide['title']; ?>
-
-											<?php if($slide['url']){
-												echo "</a>";
-											} ?>
-										</div>
-									<?php } ?>
-									<?php if($slide['description']){ ?>
-										<div class="descriptionslide">
-											<?php echo $slide['description']; ?>
-										</div>
-									<?php } ?>
-									<?php if($slide['html']){ ?>
-										<div class="descriptionslide">
-											<?php echo $slide['html']; ?>
-										</div>
-									<?php } ?>
-								</div>
-							</figcaption>
-						</figure>
-					</li>
-				<?php endforeach; ?>
-			<?php endif;?>
-		</ul>
-	</div>
-</section>
+ <section class="section header_w">
+    <header class="header row">
+      <div class="logo_w">
+        <a href="<?php echo get_home_url(); ?>" class="logo"><img src="<?php echo bloginfo("template_url"); ?>/img/logo.png" alt="Logo" alt=""></a>
+      </div>
+      <nav class="top_menu">
+        <div id="menu_holder">
+        <?php 
+        wp_nav_menu( array(
+          'menu_class'=>'menu',
+          'menu_id' => 'menu',   
+          'theme_location'=>'header_menu',
+          'after'=>''       
+        ) );
+      ?>
+    <!--       <ul id="menu">
+            <li class="top_menu_item"><a class="top_menu_link" href="#">Strona główna</a></li>
+            <li class="top_menu_item"><a class="top_menu_link" href="#">Aktualności</a></li>
+            <li class="top_menu_item"><a class="top_menu_link" href="#">Dołącz do nas </a></li>
+            <li class="top_menu_item"><a class="top_menu_link" href="#">Treningi</a></li>
+            <li class="drop_btn top_menu_item">
+              <a class="top_menu_link" href="#">Poznaj nas</a>
+              <ul class="dropdown_content">
+                <li class="dropdown_item tringle_parent"><a class="dropdown_link" href="#">Osiągnięcia</a></li>
+                <li class="dropdown_item"><a class="dropdown_link" href="#">Historia</a></li>
+                <li class="dropdown_item"><a class="dropdown_link" href="#">Statut</a></li>
+                <li class="dropdown_item"><a class="dropdown_link" href="#">Wspieraj nas</a></li>
+                <li class="dropdown_item"><a class="dropdown_link" href="#">Przekaż 1%</a></li>
+                <li class="dropdown_item"><a class="dropdown_link dropdown_link__mod" href="#">Nasi medaliści 
+                     Mistrzostw Polski </a></li>
+                <li class="dropdown_item"><a class="dropdown_link dropdown_link__mod" href="#">BikePark Powstania 
+                     Warszawskiego</a></li>
+              </ul>
+            </li>
+            <li class="top_menu_item"><a class="top_menu_link" href="#">Zespół</a></li>
+            <li class="top_menu_item"><a class="top_menu_link" href="#">Zdjęcia</a></li>
+            <li class="top_menu_item"><a class="top_menu_link" href="#">Filmy</a></li>
+            <li class="top_menu_item"><a class="top_menu_link" href="#">Partnerzy</a></li>
+            <li class="top_menu_item"><a class="top_menu_link" href="#">Kontakt</a></li>
+          </ul> -->
+        </div>
+      </nav>
+      <ul class="social">
+        <li class="sicial_top_item">
+          <a class="sicial_top_link icon icon_facebook" href="#"></a>
+        </li>
+        <li class="sicial_top_item">
+          <a class="sicial_top_link icon icon_play" href="#"></a>
+        </li>
+        <li class="sicial_top_item">
+          <a class="sicial_top_link icon icon_instagram" href="#"></a>
+        </li>
+        </div>
+    </header>
+  </section>

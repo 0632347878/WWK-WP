@@ -18,7 +18,7 @@ if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom
         <?php the_content(); ?>
     </div>
 <?php endwhile; endif; ?>
-
+[ale-slider name="1" slideshow="1" animation="fade" controlNav="0" randomize="0"]
 
 <h1>Пагинация для Галерей</h1>
 <section>

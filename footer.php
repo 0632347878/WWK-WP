@@ -45,5 +45,16 @@
     </nav>
     <!-- Scripts -->
     <?php wp_footer(); ?>
+    <script>
+    $(function() {
+      $('#menu').slicknav();
+    });
+    $('#menu').slicknav({
+       label: '',
+       duration: 1000,
+       easingOpen: "easeOutBounce", //available with jQuery UI
+       prependTo: '#menu_holder'
+     });   
+    </script>
 </body>
 </html>

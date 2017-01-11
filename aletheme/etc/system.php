@@ -57,20 +57,41 @@ add_action('after_setup_theme', 'ale_after_setup_theme');
 /**
  * Initialize Theme Navigation 
  */
+add_theme_support( 'menus' );
 function ale_init_navigation() {
 	if (function_exists('register_nav_menus')) {
 		register_nav_menus(array(
-			'header_left_menu'	=> __('Header Left Menu', 'aletheme'),
-            'header_right_menu'	=> __('Header Right Menu', 'aletheme'),
+			'header_menu'	=> __('Header Menu', 'aletheme'),
             'footer_menu'	=> __('Footer Menu', 'aletheme'),
-            'aboutpage_menu'	=> __('About Page Menu', 'aletheme'),
             'mobile_menu'	=> __('Mobile Menu', 'aletheme'),
 		));
 	}
 }
+add_filter( 'nav_menu_css_class', 'add_my_class_to_nav_menu', 10, 2 );
+function add_my_class_to_nav_menu( $classes, $item ){
+	/* $classes содержит
+	Array(
+		[1] => menu-item
+		[2] => menu-item-type-post_type
+		[3] => menu-item-object-page
+		[4] => menu-item-284
+	)
+	*/
+	$classes[] = 'top_menu_item';
+
+	return $classes;
+}
 add_action('init', 'ale_init_navigation');
 
-
+register_sidebar( array(
+        'name' => __( 'Социальные ссылки', '' ),
+        'id' => 'top-area',
+        'description' => __( 'Соц', '' ),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ) );
 /**
  * Register Post Type Wrapper
  * @param string $name
