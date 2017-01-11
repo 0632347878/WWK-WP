@@ -78,35 +78,37 @@ function is_blog () {
  */
 function ale_enqueue_scripts() {
 
-	wp_register_script( 'jquery-3.1.1', THEME_URL . '/js/libs/jquery-3.1.1.min.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false );
+	wp_register_script( 'ale_jquery-3.1.1', THEME_URL . '/js/libs/jquery-3.1.1.min.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false );
+	wp_register_script( 'ale_jqueryUI', 'https://code.jquery.com/ui/1.12.0/jquery-ui.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false );
 	// add html5 for old browsers.
-	wp_register_script( 'html5-shim', 'http://html5shim.googlecode.com/svn/trunk/html5.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false );
+	// wp_register_script( 'ale_html5-shim', 'http://html5shim.googlecode.com/svn/trunk/html5.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false );
 	// add modernizr
 	wp_register_script( 'ale_modernizr', THEME_URL . '/js/libs/modernizr-2.5.3.min.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false );
     wp_register_script( 'ale_modules', THEME_URL . '/js/modules.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
     wp_register_script( 'ale_scripts', THEME_URL . '/js/scripts.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
-    wp_register_script( 'jquery.mousewheel', THEME_URL . '/js/libs/jquery.mousewheel.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
-    wp_register_script( 'jquery.fancybox', THEME_URL . '/js/libs/jquery.fancybox-1.3.4.pack.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
-    wp_register_script( 'jquery.jscrollpane.min', THEME_URL . '/js/libs/jquery.jscrollpane.min.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
-    wp_register_script( 'scrollable', THEME_URL . '/js/libs/scrollable.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
-	wp_register_script( 'slicknav', THEME_URL . '/js/libs/jquery.slicknav.min.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false );
-	wp_register_script( 'main', THEME_URL . '/js/libs/main.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
-	wp_register_script( 'swiper', THEME_URL . '/js/libs/swiper.jquery.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
-
-	wp_enqueue_script( 'jquery-3.1.1' );
-	wp_enqueue_script( 'slicknav' );
-	wp_enqueue_script( 'jquery-form' );
-	wp_enqueue_script( 'ale_modernizr' );
-	wp_enqueue_script( 'html5-shim' );
-    wp_enqueue_script( 'jquery.mousewheel' );
-    wp_enqueue_script( 'jquery.fancybox' );
-    wp_enqueue_script( 'jquery.jscrollpane.min' );
-    wp_enqueue_script( 'scrollable' );
-    wp_enqueue_script( 'ale_modules' );
-	wp_enqueue_script( 'ale_scripts' );
-	wp_enqueue_script( 'main' ); 
-	wp_enqueue_script( 'swiper' ); 
-	wp_enqueue_script( 'jquery-ui-core' );
+    wp_register_script( 'ale_jquery.mousewheel', THEME_URL . '/js/libs/jquery.mousewheel.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
+    // wp_register_script( 'ale_jquery.fancybox', THEME_URL . '/js/libs/jquery.fancybox-1.3.4.pack.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
+    wp_register_script( 'ale_jquery.jscrollpane.min', THEME_URL . '/js/libs/jquery.jscrollpane.min.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
+    wp_register_script( 'ale_scrollable', THEME_URL . '/js/libs/scrollable.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
+	wp_register_script( 'ale_slicknav', THEME_URL . '/js/libs/jquery.slicknav.min.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false );
+	wp_register_script( 'ale_main', THEME_URL . '/js/libs/main.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
+	wp_register_script( 'ale_swiper', THEME_URL . '/js/libs/swiper.jquery.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
+		
+	wp_enqueue_script( 'ale_jquery-3.1.1' );
+	wp_enqueue_script( 'ale_jqueryUI' );
+	wp_enqueue_script( 'ale_slicknav' );
+	wp_enqueue_script( 'ale_jquery-form' );
+	wp_enqueue_script( 'ale_ale_modernizr' );
+	// wp_enqueue_script( 'ale_html5-shim' );
+    wp_enqueue_script( 'ale_jquery.mousewheel' );
+    // wp_enqueue_script( 'ale_jquery.fancybox' );
+    wp_enqueue_script( 'ale_jquery.jscrollpane.min' );
+    wp_enqueue_script( 'ale_scrollable' );
+    wp_enqueue_script( 'ale_ale_modules' );
+	wp_enqueue_script( 'ale_ale_scripts' );
+	wp_enqueue_script( 'ale_main' ); 
+	wp_enqueue_script( 'ale_swiper' ); 
+	wp_enqueue_script( 'ale_jquery-ui-core' );
 }
 add_action( 'wp_enqueue_scripts', 'ale_enqueue_scripts');
 
