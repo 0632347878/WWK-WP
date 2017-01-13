@@ -2,6 +2,11 @@ jQuery(function($) {
     "use strict";
 
     // Custom jQuery Code Here
+    $('.homeslider').flexslider({
+        animation:'fade',
+        smoothHeight:false,
+        controlNav: true
+    });
 
     $('.portfolioslider').flexslider({
         animation:'slide',
@@ -9,11 +14,6 @@ jQuery(function($) {
         controlNav: false
     });
 
-    $('.newhomeslider').flexslider({
-        animation:'slide',
-        smoothHeight:true,
-        controlNav: false
-    });
 
 });
 

@@ -16,7 +16,7 @@ if ( ! class_exists( 'Aletheme_export_import_options' ) ) {
 
         public $ale_import_results;
 
-        function __construct()
+        function aletheme_export_import_options()
         {
             add_action('admin_menu', array(&$this, 'admin_menu'));
             add_filter('upload_mimes', array(&$this, 'ale_add_mime_types'));

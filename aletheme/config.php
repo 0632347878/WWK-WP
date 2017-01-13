@@ -271,8 +271,35 @@ function aletheme_get_options() {
                         "options" => array(
                             'image_1' => $imagepath.'/1col.png',
                             'image_2' => $imagepath.'/2cl.png',
-                            'image_3' => $imagepath.'/2cr.png', ),
-        );
+                            'image_3' => $imagepath.'/2cr.png', ),);
+
+    $options[] = array("name" => "Under gallery article",
+                        "type" => "heading"); 
+
+    $options[] = array( "name" => "Heading",
+                        "desc" => "Write here article heading",
+                        "id" => "ale_headingundergallery",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Paragraph1",
+                        "desc" => "Write here paragraph1",
+                        "id" => "ale_paragraph1",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Paragraph2",
+                        "desc" => "Write here paragraph2",
+                        "id" => "ale_paragraph2",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Paragraph3",
+                        "desc" => "Write here paragraph3",
+                        "id" => "ale_paragraph3",
+                        "std" => "",
+                        "type" => "text");
+        
 	
 	return $options;
 }
