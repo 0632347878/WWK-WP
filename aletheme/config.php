@@ -404,6 +404,22 @@ function aletheme_get_options() {
                         "id" => "ale_rpartnersitem6",
                         "std" => "",
                         "type" => "upload"); 
+
+    $options[] = array("name" => "Footer",
+                        "type" => "heading");
+
+    $options[] = array( "name" => "Phone",
+                        "desc" => "Write here phone number",
+                        "id" => "ale_phone",
+                        "std" => "",
+                        "type" => "text");
+
+     $options[] = array( "name" => "Mail",
+                        "desc" => "Write here mail adress",
+                        "id" => "ale_mail",
+                        "std" => "",
+                        "type" => "text");
+
 	return $options;
 }
 
