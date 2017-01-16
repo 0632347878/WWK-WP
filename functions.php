@@ -25,3 +25,12 @@ if ( is_readable($locale_file) )
  * If you want to add custom functions you should do manual
  * updates only.
  ****************************************************************/
+
+// возвращаем title для img
+function lcb_restore_image_title( $html, $id ) {
+ 
+      $attachment = get_post($id);
+      $mytitle = $attachment->post_title;
+      return str_replace('<img', '<img title="' . $mytitle . '" ' , $html);
+}
+add_filter( 'media_send_to_editor', 'lcb_restore_image_title', 15, 2 );

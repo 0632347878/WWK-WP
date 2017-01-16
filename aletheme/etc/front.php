@@ -45,12 +45,14 @@ function ale_enqueue_styles() {
     wp_register_style( 'reset', THEME_URL . '/css/reset.css', array(), ALETHEME_THEME_VERSION, 'all');
     wp_register_style( 'slicknav', THEME_URL . '/css/slicknav.css', array(), ALETHEME_THEME_VERSION, 'all');
     wp_register_style( 'swiper', THEME_URL . '/css/swiper.css', array(), ALETHEME_THEME_VERSION, 'all');
+    wp_register_style( 'photobox', THEME_URL . '/css/photobox.css', array(), ALETHEME_THEME_VERSION, 'all');
     
     wp_enqueue_style('animate');
     wp_enqueue_style('swiper');
     wp_enqueue_style('slicknav');
     wp_enqueue_style('reset');
     wp_enqueue_style('aletheme_style_css');
+     wp_enqueue_style('photobox');
 }
 add_action( 'wp_enqueue_scripts', 'ale_enqueue_styles' );
 
@@ -81,7 +83,8 @@ function ale_enqueue_scripts() {
 
 	wp_register_script( 'ale_jquery-3.1.1', "https://code.jquery.com/jquery-2.2.4.js", array( 'jquery' ), ALETHEME_THEME_VERSION, false );
 	wp_register_script( 'ale_jqueryUI', 'https://code.jquery.com/ui/1.12.0/jquery-ui.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false );
-	wp_register_script( 'ale_modernizr', THEME_URL . '/js/libs/modernizr-2.5.3.min.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false );
+	wp_register_script( 'ale_modernizr', THEME_URL . '/js/libs/modernizr-2.5.3.min.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false ); 
+	wp_register_script( 'ale_photobox', THEME_URL . '/js/libs/jquery.photobox.js', array( 'jquery' ), ALETHEME_THEME_VERSION, true );
 	// add html5 for old browsers.
 	// wp_register_script( 'ale_html5-shim', 'http://html5shim.googlecode.com/svn/trunk/html5.js', array( 'jquery' ), ALETHEME_THEME_VERSION, false );
 	// add modernizr
@@ -97,7 +100,8 @@ function ale_enqueue_scripts() {
 		
 	wp_enqueue_script( 'ale_modernizr' );
 	wp_enqueue_script( 'ale_jquery-3.1.1' );
-    wp_enqueue_script( 'ale_modules' );
+    wp_enqueue_script( 'ale_modules' );  
+   
 	wp_enqueue_script( 'ale_scripts' );
 	wp_enqueue_script( 'ale_jqueryUI' );
 	wp_enqueue_script( 'ale_slicknav' );
@@ -110,6 +114,7 @@ function ale_enqueue_scripts() {
 	wp_enqueue_script( 'ale_main' ); 
 	wp_enqueue_script( 'ale_swiper' ); 
 	wp_enqueue_script( 'ale_jquery-ui-core' );
+	 wp_enqueue_script( 'ale_photobox');
 }
 add_action( 'wp_enqueue_scripts', 'ale_enqueue_scripts');
 

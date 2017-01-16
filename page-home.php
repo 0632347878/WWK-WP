@@ -86,28 +86,25 @@ get_header();
          </div>
        </div>
      </section>
+		 <!-- end section_under_gallery -->
      <section class="bread_crumb_w page_content">
        <span class="breadcrump_text"><?php if( function_exists('kama_breadcrumbs') ) echo kama_breadcrumbs(); ?></span>
        
      </section>
      
-		 <!-- end section_under_gallery -->
     <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
         <!-- article -->
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           	
             <?php the_content(); ?>
-            <div id="slider-images">
-            <?php 
-							$id=145; 
-							$post = get_post($id); 
-							$content = apply_filters('the_content', $post->post_content); 
-							echo $content;  
-						?>
-						</div>
+           
+
             <!-- Slider main container -->
-            <div class="swiper-container page_content">
+          <section class="section_fotogalerry">	  
+            <div class="swiper-container_w page_content">	
+            <div class="swiper-container page_content_fotogalerry">
+            		<h2 class="heading_title2 fotogallery_title"><?php echo ale_get_option('fotogallerytitle'); ?></h2>
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper" id="gallery">
 
@@ -115,8 +112,8 @@ get_header();
 
 <script>
 var galleryBlock = document.querySelector("#gallery");
-var oldImgBlock = document.querySelector("#slider-images")
-var sliderImagesArray = document.querySelectorAll("#slider-images .wp-caption");
+var oldImgBlock = document.querySelector(".Collage")
+var sliderImagesArray = document.querySelectorAll(".Collage .Image_Wrapper");
 
 function addSlide(){
 	var newSlide = document.createElement("div");
@@ -129,10 +126,12 @@ function wrapTheSlides(){
 	for(i=0;i<sliderImagesArray.length;i++){
 		if(count === 0){
 			addSlide();
-			console.log(count);
+
 		}
 		if(count<8){
 			galleryBlock.lastChild.innerHTML += sliderImagesArray[i].outerHTML;
+			
+			console.log(sliderImagesArray[i]);
 			count++;
 			if(i === sliderImagesArray.length - 1){
 				oldImgBlock.remove();
@@ -146,6 +145,8 @@ function wrapTheSlides(){
 
 wrapTheSlides();
 
+
+
 </script>   
                 
                 <!-- If we need navigation buttons -->
@@ -154,9 +155,44 @@ wrapTheSlides();
                 
                
             </div>
-            
-
-            
+            <h3 class="h3 more_news_heading more_news_heading__mod"><a class="more_news_action2" href="#"><?php echo ale_get_option('fotogallerymore'); ?></a></h3>
+            </div>
+</section>
+<!-- begin section_under_gallery2 -->
+<section class="under_gallery_w2">
+  <div class="section_under_gallery2 page_content">
+      <div class="content_holder2">
+        <h2 class="heading_title2 heading_title2__mod"><?php echo ale_get_option('headingsponsors'); ?></h2>
+        <div class="main_sponsor1"><img src="<?php echo ale_get_option('sponsor1'); ?>" alt=""></div>
+        <div class="main_sponsor2"><img src="<?php echo ale_get_option('sponsor2'); ?>" alt=""></div>
+      </div>
+  </div>
+</section>
+<section class="partners_w">
+	<div class="section_partners page_content">
+		<div class="section_sponsors_left">
+			<h2 class="heading_title2 heading_title2__mod sponsors_heding"><?php echo ale_get_option('headingsponsorsleft'); ?></h2>
+			<div class="sponsor_items_w">
+				<div class="sponsor_item"><img src="<?php echo ale_get_option('lsponsoritem1'); ?>" alt="sponsor-item"></div>
+				<div class="sponsor_item"><img src="<?php echo ale_get_option('lsponsoritem2'); ?>" alt="sponsor-item"></div>
+				<div class="sponsor_item"><img src="<?php echo ale_get_option('lsponsoritem3'); ?>" alt="sponsor-item"></div>
+				<div class="sponsor_item"><img src="<?php echo ale_get_option('lsponsoritem4'); ?>" alt="sponsor-item"></div>
+			</div>
+		</div>
+		<div class="section_partners_right">
+			<h2 class="heading_title2 heading_title2__mod partners_heding"><?php echo ale_get_option('headingsponsorsright'); ?></h2>
+			<div class="partner_items_w">
+				<div class="partner_items"><img src="<?php echo ale_get_option('rpartnersitem1'); ?>" alt=""></div> 
+				<div class="partner_items"><img src="<?php echo ale_get_option('rpartnersitem2'); ?>" alt=""></div>
+				<div class="partner_items"><img src="<?php echo ale_get_option('rpartnersitem3'); ?>" alt=""></div>
+				<div class="partner_items"><img src="<?php echo ale_get_option('rpartnersitem4'); ?>" alt=""></div>
+				<div class="partner_items"><img src="<?php echo ale_get_option('rpartnersitem5'); ?>" alt=""></div>
+				<div class="partner_items"><img src="<?php echo ale_get_option('rpartnersitem6'); ?>" alt=""></div>
+			</div>	
+		</div>
+	</div>
+</section>
+<!-- end section_under_gallery2 -->            
         </article>
         <!-- /article -->
 

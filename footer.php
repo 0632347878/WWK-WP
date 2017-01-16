@@ -11,8 +11,16 @@
         
 
     </nav>
+
+
+
+
+
+
+</div>
     <!-- Scripts -->
     <?php wp_footer(); ?>
+
     <script>
       $(function() {
         $('#menu').slicknav();
@@ -24,17 +32,29 @@
          prependTo: '#menu_holder'
        });   
     </script>
-    <!-- <script>
+
+
+
+
+    <script>
       var mySwiper = new Swiper('.swiper-container', {
           speed: 400,
           spaceBetween: 100,
+          // uniqueNavElements: true,
           // Optional parameters
           direction: 'horizontal',
           loop: true,
-          autoplay: 2000,
+          //autoplay: 2000,
           // spaceBetween: 20,
-          slidesPerView: 5
+          slidesPerView: 1,
+          // Navigation arrows
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev'
       }); 
-    </script> -->
+    </script>
+    <script>
+    $('#gallery').photobox('a', { thumbs:true, loop:false });
+</script>
+
 </body>
 </html>

@@ -273,7 +273,7 @@ function aletheme_get_options() {
                             'image_2' => $imagepath.'/2cl.png',
                             'image_3' => $imagepath.'/2cr.png', ),);
 
-    $options[] = array("name" => "Under gallery article",
+    $options[] = array("name" => "Under gallery first article",
                         "type" => "heading"); 
 
     $options[] = array( "name" => "Heading",
@@ -300,7 +300,110 @@ function aletheme_get_options() {
                         "std" => "",
                         "type" => "text");
         
-	
+	$options[] = array("name" => "gallery second article",
+                        "type" => "heading");
+
+    $options[] = array( "name" => "Gallery heading",
+                        "desc" => "Write here gallery heading",
+                        "id" => "ale_fotogallerytitle",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Link more",
+                        "desc" => "Write here text for link more",
+                        "id" => "ale_fotogallerymore",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Heading main sponsors",
+                        "desc" => "Write here article heading",
+                        "id" => "ale_headingsponsors",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Sponsor on the left",
+                        "desc" => "Upload or put the link of your sponsor",
+                        "id" => "ale_sponsor1",
+                        "std" => "",
+                        "type" => "upload");
+
+    $options[] = array( "name" => "Sponsor on the right",
+                        "desc" => "Upload or put the link of your sponsor",
+                        "id" => "ale_sponsor2",
+                        "std" => "",
+                        "type" => "upload");
+
+    $options[] = array( "name" => "Sponsors left block heading",
+                        "desc" => "Write here article heading",
+                        "id" => "ale_headingsponsorsleft",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Sponsor item1",
+                        "desc" => "Upload or put the link of your sponsor picture",
+                        "id" => "ale_lsponsoritem1",
+                        "std" => "",
+                        "type" => "upload");   
+
+    $options[] = array( "name" => "Sponsor item2",
+                        "desc" => "Upload or put the link of your sponsor picture",
+                        "id" => "ale_lsponsoritem2",
+                        "std" => "",
+                        "type" => "upload"); 
+
+    $options[] = array( "name" => "Sponsor item3",
+                        "desc" => "Upload or put the link of your sponsor picture",
+                        "id" => "ale_lsponsoritem3",
+                        "std" => "",
+                        "type" => "upload"); 
+
+    $options[] = array( "name" => "Sponsor item4",
+                        "desc" => "Upload or put the link of your sponsor picture",
+                        "id" => "ale_lsponsoritem4",
+                        "std" => "",
+                        "type" => "upload"); 
+
+    $options[] = array( "name" => "Partners right block heading",
+                         "desc" => "Write here article heading",
+                         "id" => "ale_headingsponsorsright",
+                         "std" => "",
+                         "type" => "text"); 
+
+    $options[] = array( "name" => "Partners item1",
+                        "desc" => "Upload or put the link of your sponsor picture",
+                        "id" => "ale_rpartnersitem1",
+                        "std" => "",
+                        "type" => "upload"); 
+
+    $options[] = array( "name" => "Partners item2",
+                        "desc" => "Upload or put the link of your sponsor picture",
+                        "id" => "ale_rpartnersitem2",
+                        "std" => "",
+                        "type" => "upload"); 
+
+    $options[] = array( "name" => "Partners item3",
+                        "desc" => "Upload or put the link of your sponsor picture",
+                        "id" => "ale_rpartnersitem3",
+                        "std" => "",
+                        "type" => "upload"); 
+
+    $options[] = array( "name" => "Partners item4",
+                        "desc" => "Upload or put the link of your sponsor picture",
+                        "id" => "ale_rpartnersitem4",
+                        "std" => "",
+                        "type" => "upload"); 
+
+    $options[] = array( "name" => "Partners item5",
+                        "desc" => "Upload or put the link of your sponsor picture",
+                        "id" => "ale_rpartnersitem5",
+                        "std" => "",
+                        "type" => "upload"); 
+
+    $options[] = array( "name" => "Partners item6",
+                        "desc" => "Upload or put the link of your sponsor picture",
+                        "id" => "ale_rpartnersitem6",
+                        "std" => "",
+                        "type" => "upload"); 
 	return $options;
 }
 
